@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+
+{% block header %}
+   <h1>To Do App</h1>
+{% endblock %}
+
+{% block content%}
+
+	{% for N in todo_list %}
+		{% if N.status == 'Zaplanirovana' %}
+			<p style="color: yellow">{{ N.Opisanie }}</p>
+			<p> {{ N.status }}</p>
+		{% endif%}
+		{% if N.status == 'Vypolneno' %}
+			<p style="color: green">{{ N.Opisanie }}</p>
+			<p> {{ N.status }}</p>
+		{% endif%}
+		{% if N.status == 'Otmeneno' %}
+			<p style="color: red">{{ N.Opisanie }}</p>
+			<p> {{ N.status }}</p>
+		{% endif%}
+	{% endfor %}
+{% endblock %}	
